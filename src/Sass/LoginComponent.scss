@@ -1,0 +1,134 @@
+$linkedinBlue1: #0072b1;
+$linkedinBlue2: #0073b1;
+$linkedinBlue3: #004c75;
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.login-wrapper {
+    background-color: white;
+    height: 100vh;
+
+    .login-wrapper-inner {
+        margin-left: 200px;
+    }
+
+    .heading {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.9);
+    }
+
+    .sub-heading {
+        margin-top: -20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+}
+
+.login-btn {
+    width: 300px;
+    height: 50px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: $linkedinBlue2;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.login-btn:hover {
+    background-color: $linkedinBlue3;
+}
+
+.auth-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+
+    .common-input {
+        height: 30px;
+        background-color: white;
+        outline: none;
+        border: 1px solid #212121;
+        padding: 10px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 16px;
+        color: #212121;
+        border-radius: 3px;
+        margin: 10px 0px;
+    }
+
+    .common-input:focus {
+        outline: 1px solid $linkedinBlue1;
+    }
+
+    ::placeholder {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 18px;
+        margin-top: 16px;
+    }
+}
+
+.linkedinLogo {
+    width: 80px;
+    padding: 20px;
+}
+
+.hr-text {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: .5;
+
+    &:before {
+        content: '';
+        background: linear-gradient(to right, transparent, #818078, transparent);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+    }
+
+    &:after {
+        content: attr(data-content);
+        position: relative;
+        display: inline-block;
+        color: black;
+        padding: 0 .5em;
+        line-height: 1.5em;
+        color: #818078;
+        background-color: #fcfcfa9c;
+    }
+}
+
+.google-btn-container{
+    margin-left: 200px;
+
+    .google-btn{
+        width: 300px !important;
+    }
+
+    .go-to-signup{
+        margin-left: 50px;
+        font-size: 18px;
+    }
+
+    .join-now{
+        color: $linkedinBlue1;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        cursor: pointer;
+        font-size: 18px;
+    }
+}
