@@ -1,5 +1,5 @@
 import React from 'react';
-import {createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup} from 'firebase/auth';
+import {createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut} from 'firebase/auth';
 import { auth } from '../firebaseConfig';
 
 export const LoginAPI = (email,password) => {
@@ -25,6 +25,14 @@ export const GoogleSignInAPI = () => {
         let googleProvider = new GoogleAuthProvider();
         let res = signInWithPopup(auth, googleProvider);
         return res;
+    }catch(err){
+        return err;
+    }
+}
+
+export const onLogout = () => {
+    try{
+        signOut(auth);
     }catch(err){
         return err;
     }
