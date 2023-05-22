@@ -1,4 +1,4 @@
-import { addDoc, collection, onSnapshot } from "firebase/firestore"
+import { addDoc, collection, doc, onSnapshot, updateDoc } from "firebase/firestore"
 import { toast } from "react-toastify";
 import { firestore } from "../firebaseConfig";
 
@@ -36,9 +36,20 @@ export const getCurrentUserData = (setCurrentUser) => {
     onSnapshot(userRef, response => {
         setCurrentUser(response.docs.map(docs => {
             return { ...docs.data(), userID: docs.id };
-            }).filter(item => {
-                return item.email === localStorage.getItem("userEmail");
-            })[0]
+        }).filter(item => {
+            return item.email === localStorage.getItem("userEmail");
+        })[0]
         );
     });
 };
+
+export const editProfile = (userID, payload) => {
+    let userToEdit = doc(userRef, userID);
+    updateDoc(userToEdit, payload)
+        .then(() => {
+            toast.success("Profile Updated");
+         })
+        .catch(err => {
+            console.log(err);
+        });
+}

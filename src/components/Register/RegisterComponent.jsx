@@ -4,7 +4,6 @@ import '../Login/LoginComponent.scss';
 import LinkedinLogo from '../../assets/linkedinLogo.png';
 import GoogleButton from 'react-google-button';
 import { toast } from 'react-toastify';
-// import { navigate } from '../helpers/useNavigate';
 import { useNavigate } from 'react-router-dom';
 import { postUserData } from '../../api/FirestoreAPI';
 

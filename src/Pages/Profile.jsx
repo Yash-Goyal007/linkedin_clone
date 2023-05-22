@@ -16,7 +16,7 @@ const Profile = props => {
                 setLoading(false);
         })
     }, []);
-    return loading? <Loader/>:<ProfileComponent currentUser={currentUser} />;
+    return loading? <Loader/>:<ProfileComponent currentUser={props.currentUser} />;
 };
 
 export default Profile;  

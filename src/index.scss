@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Poppins:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap");
+$linkedinBlue1: #0072b1;
+$linkedinBlue2: #0073b1;
+$linkedinBlue3: #004c75;
+
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -7,7 +11,7 @@
 
   color-scheme: light dark;
   color: #212121;
-  background-color: rgba(0,0,0,0.05);
+  background-color: rgba(0, 0, 0, 0.05);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,6 +20,24 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.common-input {
+  height: 30px;
+  background-color: white;
+  outline: none;
+  border: 1px solid #212121;
+  padding: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  color: #212121;
+  border-radius: 3px;
+  margin: 10px 0px;
+}
 
-
-
+.common-input:focus {
+  outline: 1px solid $linkedinBlue1;
+}
+::placeholder {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  margin-top: 16px;
+}

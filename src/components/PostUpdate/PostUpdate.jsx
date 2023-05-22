@@ -33,8 +33,7 @@ const PostUpdate = props => {
             </div>
             <ModalComponent modalOpen={modalOpen} setModalOpen={setModalOpen} setStatus={setStatus} status={status} sendStatus={sendStatus} />
             <div>
-
-                {allStatuses.map(posts => <PostsCard posts = {posts} />)}
+                {allStatuses.map(posts => <PostsCard posts = {posts}  key={posts.postId} />)}
             </div>
         </div>
     );
