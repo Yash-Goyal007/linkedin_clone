@@ -10,11 +10,12 @@
     flex-direction: column;
 
     .name{
-
+        text-decoration: underline;
+        cursor: pointer;
         font-family: system-ui;
         font-size: 14px;
         font-weight: 600;
-        color:rgba(0,0,0,0.6);
+        color:rgba(15,17,157,0.6);
         margin: 10px 0 0 10px;
     }
 

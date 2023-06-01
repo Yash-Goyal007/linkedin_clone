@@ -23,6 +23,10 @@ export const getStatus = (setAllStatus) => {
     });
 };
 
+export const getSingleStatus = (setAllStatus,id) => {
+    const singlePostQuery = query(postsRef,)
+}
+
 export const postUserData = object => {
     addDoc(userRef, object)
         .then(() => {
@@ -48,8 +52,12 @@ export const editProfile = (userID, payload) => {
     updateDoc(userToEdit, payload)
         .then(() => {
             toast.success("Profile Updated");
-         })
+        })
         .catch(err => {
             console.log(err);
         });
+};
+
+export const getSingleUser = () => {
+
 }
