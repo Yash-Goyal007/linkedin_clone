@@ -8,14 +8,16 @@ import './ProfileCard.scss';
 const ProfileCard = props => {
     let location = useLocation();
     const [allStatuses, setAllStatus] = useState([]);
-    const [currentProfile,setCurrentProfile] = useState({});
+    const [currentProfile, setCurrentProfile] = useState({});
+    console.log(location?.state?.email);
     useMemo(() => {
-        if(location?.state?.id)
-            getSingleStatus(setAllStatus,location?.state?.id);
-        if(location?.state?.email)
-            getSingleUser(setCurrentProfile,location?.state?.email);
+        if (location?.state?.id)
+            getSingleStatus(setAllStatus, location?.state?.email);
+        if (location?.state?.email)
+            getSingleUser(setCurrentProfile, location?.state?.email);
 
-    },[])
+    }, []);
+    // console.log(currentProfile);
     return (
         <>
             <div className="profile-card">
@@ -24,13 +26,23 @@ const ProfileCard = props => {
                 </div>
                 <div className="profile-info">
                     <div>
-                        <h3 className='userName'>{props.currentUser.name}</h3>
-                        <p className='heading'>{props.currentUser.headline}</p>
-                        <p>{props.currentUser.location}</p>
+                        <h3 className='userName'>
+                            {Object.values(currentProfile).length === 0 ? props.currentUser.name : currentProfile?.name}
+                        </h3>
+                        <p className='heading'>
+                            {Object.values(currentProfile).length === 0 ? props.currentUser.headline : currentProfile?.headline}
+                        </p>
+                        <p>
+                            {Object.values(currentProfile).length === 0 ? props.currentUser.location : currentProfile?.location}
+                        </p>
                     </div>
                     <div className='right-info'>
-                        <p className='college'>{props.currentUser.college}</p>
-                        <p className='company'>{props.currentUser.company}</p>
+                        <p className='college'>
+                        {Object.values(currentProfile).length === 0 ? props.currentUser.college : currentProfile?.college}
+                        </p>
+                        <p className='company'>
+                        {Object.values(currentProfile).length === 0 ? props.currentUser.company : currentProfile?.company}
+                        </p>
                     </div>
                 </div>
             </div>
