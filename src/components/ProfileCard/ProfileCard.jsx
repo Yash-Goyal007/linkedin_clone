@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import {HiOutlinePencil} from 'react-icons/hi'
 import { getSingleStatus, getSingleUser } from '../../api/FirestoreAPI';
 
 import PostsCard from '../PostsCard/PostsCard';
@@ -9,20 +10,22 @@ const ProfileCard = props => {
     let location = useLocation();
     const [allStatuses, setAllStatus] = useState([]);
     const [currentProfile, setCurrentProfile] = useState({});
-    console.log(location?.state?.email);
+    // console.log(location?.state?.email);
+    // console.log(location);
     useMemo(() => {
         if (location?.state?.id)
-            getSingleStatus(setAllStatus, location?.state?.email);
+        getSingleStatus(setAllStatus, location?.state?.id);
         if (location?.state?.email)
-            getSingleUser(setCurrentProfile, location?.state?.email);
-
+        getSingleUser(setCurrentProfile, location?.state?.email);
+        
     }, []);
+    // console.log(allStatuses);
     // console.log(currentProfile);
     return (
         <>
             <div className="profile-card">
                 <div className='edit-btn'>
-                    <button onClick={props.onEdit}>Edit</button>
+                    <HiOutlinePencil className='edit-icon' onClick={props.onEdit} />
                 </div>
                 <div className="profile-info">
                     <div>

@@ -24,6 +24,7 @@ export const getStatus = (setAllStatus) => {
 };
 
 export const getSingleStatus = (setAllStatus, id) => {
+    // console.log(id);
     const singlePostQuery = query(postsRef, where("userID", "==", id));
     onSnapshot(singlePostQuery, response => {
         setAllStatus(response.docs.map(docs => {
@@ -64,7 +65,7 @@ export const editProfile = (userID, payload) => {
         });
 };
 
-export const getSingleUser = (setCurrentUser,email) => {
+export const getSingleUser = (setCurrentUser, email) => {
     const singleUserQuery = query(userRef, where("email", "==", email));
     onSnapshot(singleUserQuery, response => {
         setCurrentUser(
